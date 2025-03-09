@@ -32,3 +32,116 @@ body {
 img[src$="svg"] {
     width: 24px;
 }
+
+#body-two-column-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+}
+
+#header {
+    grid-area: header;
+
+    & #header-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "search profile"
+            "greetings buttons";
+
+        & #header-greetings-wrapper {
+            grid-area: greetings;
+
+            display: flex;
+        }
+
+        & #header-buttons-wrapper {
+            grid-area: buttons;
+        }
+
+        & #search-bar-wrapper {
+            grid-area: search;
+
+            display: flex;
+            align-items: center;
+
+            & #search {
+                width: 100%;
+            }
+        }
+
+        & #header-profile-wrapper {
+            grid-area: profile;
+
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#dashboard-sidebar {
+    grid-area: sidebar;
+
+    & #dashboard-sidebar-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+
+        & #dashboard-header-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        & li {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#main {
+    grid-area: main;
+
+    & #main-grid {
+        display: grid;
+        grid-template-columns: 2.8fr 1fr;
+        grid-template-areas:
+            "projects announcements"
+            "projects trending";
+
+        & #projects-section {
+            grid-area: projects;
+
+            & .projects-card-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(16.125rem, 1fr));
+
+                & .projects-card {
+                    display: flex;
+                    flex-direction: column;
+
+                    & .icons-wrapper {
+                        display: flex;
+                        align-self: end;
+                    }
+                }
+            }
+        }
+
+        & #announcements-section {
+            grid-area: announcements;
+        }
+
+        & #trending-section {
+            grid-area: trending;
+
+            & .trending-block {
+                & :first-child {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
