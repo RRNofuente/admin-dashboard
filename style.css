@@ -83,6 +83,16 @@ body {
 
     display: grid;
     place-content: center;
+
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    opacity: 0.8;
+}
+
+.button-primary:active {
+    transform: scale(0.95);
 }
 
 h1,
@@ -122,6 +132,10 @@ h4 {
     grid-area: header;
 
     background-color: var(--bg-light-900);
+
+    & img[src$="svg"] {
+        cursor: pointer;
+    }
 
     & #header-grid {
         display: grid;
@@ -170,6 +184,12 @@ h4 {
                 border: none;
 
                 background-color: var(--bg-light-800);
+
+                cursor: pointer;
+            }
+
+            & #search:hover {
+                opacity: 0.8;
             }
         }
 
@@ -224,6 +244,8 @@ h4 {
             gap: var(--spc-600);
 
             font-size: var(--fs-dashboard-nav-links);
+
+            cursor: pointer;
         }
     }
 }
@@ -232,6 +254,10 @@ h4 {
     grid-area: main;
 
     background-color: var(--bg-light-800);
+
+    & img[src$="svg"] {
+        cursor: pointer;
+    }
 
     & h2 {
         margin-bottom: var(--spc-200);
