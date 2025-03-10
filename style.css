@@ -204,6 +204,10 @@ h4 {
 
     background-color: var(--bg-light-800);
 
+    & h2 {
+        margin-bottom: var(--spc-200);
+    }
+
     & p {
         font-size: var(--fs-para-primary);
         font-weight: var(--fw-paragraph);
@@ -215,7 +219,12 @@ h4 {
         grid-template-columns: 2.8fr 1fr;
         grid-template-areas:
             "projects announcements"
-            "projects trending";
+            "projects trending"
+            "projects ........";
+
+        gap: var(--spc-600);
+
+        padding: var(--spc-800) var(--spc-800) var(--spc-900) var(--spc-400);
 
         & #projects-section {
             grid-area: projects;
@@ -251,11 +260,27 @@ h4 {
         & #announcements-section {
             grid-area: announcements;
 
-            & .announcements-block {
+            & .announcements-block-wrapper {
                 background-color: var(--bg-light-900);
 
-                & p {
-                    font-size: var(--fs-para-secondary);
+                padding: var(--spc-800) var(--spc-600);
+                border-radius: 10px;
+
+                & .announcements-block {
+                    padding-inline: calc(var(--spc-100) * 0.5);
+
+                    & p {
+                        font-size: var(--fs-para-secondary);
+                    }
+                }
+
+                & .announcements-block:not(:last-child) {
+                    padding-bottom: var(--spc-400);
+                    border-bottom: 2px solid var(--bg-light-800);
+                }
+
+                & .announcements-block:not(:first-child) {
+                    padding-top: var(--spc-400);
                 }
             }
         }
@@ -263,19 +288,27 @@ h4 {
         & #trending-section {
             grid-area: trending;
 
-            & .trending-block {
+            & .trending-block-wrapper {
+                display: grid;
+                gap: var(--spc-600);
+
                 background-color: var(--bg-light-900);
 
-                & :first-child {
-                    display: flex;
-                }
+                padding: var(--spc-400) var(--spc-600);
+                border-radius: 10px;
 
-                & p:first-child {
-                    color: var(--clr-dark-900);
-                }
+                & .trending-block {
+                    & :first-child {
+                        display: flex;
+                    }
 
-                & p {
-                    font-size: var(--fs-para-secondary);
+                    & p:first-child {
+                        color: var(--clr-dark-900);
+                    }
+
+                    & p {
+                        font-size: var(--fs-para-secondary);
+                    }
                 }
             }
         }
