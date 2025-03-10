@@ -26,8 +26,8 @@ body {
     --fs-heading-tertiary: 1.125rem;
     --fs-heading-quaternary: 1rem;
 
-    --fs-dashboard-heading: 1.75rem;
-    --fs-dashboard-nav-links: 1.5rem;
+    --fs-dashboard-heading: 1.5rem;
+    --fs-dashboard-nav-links: 1.25rem;
 
     --fs-para-primary: 1rem;
     --fs-para-secondary: 0.875rem;
@@ -64,20 +64,48 @@ img[src$="svg"] {
 
 body {
     font-family: var(--ff-default, sans-serif);
+    color: var(--clr-dark-900);
 }
 
 .button-primary {
     background-color: #1992d4;
     color: #fff;
 
+    font-size: var(--fs-para-primary);
+    font-weight: var(--fw-paragraph);
+
     width: 6.25em;
     height: 2.5em;
+
     padding: 14px 28px;
     border: none;
     border-radius: 20px;
 
     display: grid;
     place-content: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: var(--fw-heading);
+}
+
+h1 {
+    font-size: var(--fs-heading-primary);
+}
+
+h2 {
+    font-size: var(--fs-heading-secondary);
+}
+
+h3 {
+    font-size: var(--fs-heading-tertiary);
+}
+
+h4 {
+    font-size: var(--fs-heading-quaternary);
 }
 
 /*  */
@@ -93,6 +121,8 @@ body {
 #header {
     grid-area: header;
 
+    background-color: var(--bg-light-900);
+
     & #header-grid {
         display: grid;
         grid-template-columns: 1fr auto;
@@ -104,6 +134,11 @@ body {
             grid-area: greetings;
 
             display: flex;
+
+            & p {
+                font-size: var(--fs-para-secondary);
+                font-weight: var(--fw-heading);
+            }
         }
 
         & #header-buttons-wrapper {
@@ -119,7 +154,11 @@ body {
             align-items: center;
 
             & #search {
+                appearance: none;
                 width: 100%;
+                border-radius: 20px;
+                border: none;
+                background-color: var(--bg-light-800);
             }
         }
 
@@ -135,6 +174,10 @@ body {
 #dashboard-sidebar {
     grid-area: sidebar;
 
+    font-weight: var(--fw-heading);
+    color: var(--clr-light);
+    background-color: var(--bg-primary);
+
     & #dashboard-sidebar-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -143,17 +186,29 @@ body {
         & #dashboard-header-wrapper {
             display: flex;
             align-items: center;
+
+            font-size: var(--fs-dashboard-heading);
         }
 
         & li {
             display: flex;
             align-items: center;
+
+            font-size: var(--fs-dashboard-nav-links);
         }
     }
 }
 
 #main {
     grid-area: main;
+
+    background-color: var(--bg-light-800);
+
+    & p {
+        font-size: var(--fs-para-primary);
+        font-weight: var(--fw-paragraph);
+        color: var(--clr-dark-700);
+    }
 
     & #main-grid {
         display: grid;
@@ -173,6 +228,8 @@ body {
                     display: flex;
                     flex-direction: column;
 
+                    background-color: var(--bg-light-900);
+
                     & .icons-wrapper {
                         display: flex;
                         align-self: end;
@@ -183,14 +240,32 @@ body {
 
         & #announcements-section {
             grid-area: announcements;
+
+            & .announcements-block {
+                background-color: var(--bg-light-900);
+
+                & p {
+                    font-size: var(--fs-para-secondary);
+                }
+            }
         }
 
         & #trending-section {
             grid-area: trending;
 
             & .trending-block {
+                background-color: var(--bg-light-900);
+
                 & :first-child {
                     display: flex;
+                }
+
+                & p:first-child {
+                    color: var(--clr-dark-900);
+                }
+
+                & p {
+                    font-size: var(--fs-para-secondary);
                 }
             }
         }
