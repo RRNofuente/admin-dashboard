@@ -129,11 +129,15 @@ h4 {
         grid-template-areas:
             "search profile"
             "greetings buttons";
+        gap: var(--spc-700);
+
+        padding: var(--spc-200) var(--spc-900);
 
         & #header-greetings-wrapper {
             grid-area: greetings;
 
             display: flex;
+            gap: var(--spc-500);
 
             & p {
                 font-size: var(--fs-para-secondary);
@@ -143,8 +147,10 @@ h4 {
 
         & #header-buttons-wrapper {
             grid-area: buttons;
+            justify-self: end;
 
             display: flex;
+            gap: var(--spc-700);
         }
 
         & #search-bar-wrapper {
@@ -152,21 +158,30 @@ h4 {
 
             display: flex;
             align-items: center;
+            gap: var(--spc-500);
 
             & #search {
                 appearance: none;
                 width: 100%;
+                height: var(--spc-700);
+
+                padding: var(--spc-100);
                 border-radius: 20px;
                 border: none;
+
                 background-color: var(--bg-light-800);
             }
         }
 
         & #header-profile-wrapper {
             grid-area: profile;
+            justify-self: end;
 
             display: flex;
             align-items: center;
+            gap: var(--spc-700);
+
+            padding-right: var(--spc-300);
         }
     }
 }
