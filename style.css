@@ -224,15 +224,25 @@ h4 {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(16.125rem, 1fr));
 
+                gap: var(--spc-700);
+
                 & .projects-card {
                     display: flex;
                     flex-direction: column;
 
                     background-color: var(--bg-light-900);
 
+                    padding: var(--spc-800) var(--spc-700) var(--spc-700)
+                        var(--spc-600);
+                    border-left: 0.75rem solid var(--bg-secondary);
+                    border-radius: 10px;
+
                     & .icons-wrapper {
                         display: flex;
                         align-self: end;
+
+                        gap: var(--spc-700);
+                        margin-top: var(--spc-900);
                     }
                 }
             }
